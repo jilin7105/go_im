@@ -13,10 +13,10 @@ func userlogin(writer http.ResponseWriter, request *http.Request) {
 	//restapi json
 	//获得参数
 	//解析参数
-
-
-	username := request.PostForm.Get("username")
-	password := request.PostForm.Get("passwd")
+	//
+	request.ParseForm()
+	username := request.PostFormValue("username")
+	password := request.PostFormValue("passwd")
 	loginok := false
 	if (username == "jilin7105" && password =="123qwe") {
 		loginok =true
